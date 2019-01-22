@@ -14,11 +14,11 @@ $(document).ready(function () {
 
 var trainName = "";
 var destination = "";
-var firstTime;
-var timeFormat = "hh:mm:ss";
+var firstTime = "05:25";
+var timeFormat = moment().format("h:mm a");
 var firstTimeConverted = moment(timeFormat);
-var currentTime = moment();
-var tFrequency=0;
+// var currentTime = moment();
+var tFrequency=20;
 var diffTime = moment().diff(moment(firstTimeConverted, "minutes"));
 var tRemainder = diffTime % tFrequency;
 var tMinutestilTrain = tFrequency - tRemainder;
@@ -31,7 +31,7 @@ $('#submit').on("click", function (event) {
 
     trainName = $('#name').val().trim();
     destination = $('#destination').val().trim();
-    firstTime = moment($('#first-time-train').val().trim(), "MM/DD/YYYY").format('X');
+    firstTime = moment($('#first-train-time').val().trim(), "MM/DD/YYYY").format('X');
     tFrequency = $('#frequency').val().trim();
 
     var trainData = {
@@ -43,7 +43,7 @@ $('#submit').on("click", function (event) {
 
     database.ref().push(trainData);
 
-    console.log(trainData.name);
+    console.log(trainData.train);
     console.log(trainData.destination);
     console.log(trainData.firstTrainTime);
     console.log(trainData.frequency);
