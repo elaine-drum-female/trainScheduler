@@ -18,7 +18,7 @@ var firstTime;
 var timeFormat = "hh:mm:ss";
 var firstTimeConverted = moment(timeFormat);
 var currentTime = moment();
-var tFrequency:0;
+var tFrequency=0;
 var diffTime = moment().diff(moment(firstTimeConverted, "minutes"));
 var tRemainder = diffTime % tFrequency;
 var tMinutestilTrain = tFrequency - tRemainder;
