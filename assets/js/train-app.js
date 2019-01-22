@@ -15,10 +15,11 @@ $(document).ready(function () {
 var trainName = "";
 var destination = "";
 var firstTime;
-var firstTimeConverted = moment(firstTime, "HH:mm").substract(1, "years");
+var timeFormat = "hh:mm:ss";
+var firstTimeConverted = moment(timeFormat);
 var currentTime = moment();
 var tFrequency:0;
-var diffTime = moment().diff(moment(firstTimeConverted, "minutes");
+var diffTime = moment().diff(moment(firstTimeConverted, "minutes"));
 var tRemainder = diffTime % tFrequency;
 var tMinutestilTrain = tFrequency - tRemainder;
 var nextArrival= moment().add(tMinutestilTrain, "minutes");
@@ -41,6 +42,11 @@ $('#submit').on("click", function (event) {
     };
 
     database.ref().push(trainData);
+
+    console.log(trainData.name);
+    console.log(trainData.destination);
+    console.log(trainData.firstTrainTime);
+    console.log(trainData.frequency);
 });
 
 
