@@ -33,6 +33,14 @@ $('#submit').on("click", function (event) {
     firstTime = moment($('#first-time-train').val().trim(), "MM/DD/YYYY").format('X');
     tFrequency = $('#frequency').val().trim();
 
+    var trainData = {
+        train: trainName,
+        destination: destination,
+        firstTrainTime: firstTime,
+        frequency: frequency
+    };
+
+    database.ref().push(trainData);
 });
 
 
