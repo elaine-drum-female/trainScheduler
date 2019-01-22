@@ -25,6 +25,11 @@ var nextArrival= moment().add(tMinutestilTrain, "minutes");
 
 
 
+$('#submit').on("click", function () {
+    event.preventDefault();
+});
+
+
 
 
 
