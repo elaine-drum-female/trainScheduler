@@ -14,10 +14,10 @@ $(document).ready(function () {
 
 var trainName = "";
 var destination = "";
-var firstTime = "05:00";
+var firstTime;
 var firstTimeConverted = moment(firstTime, "HH:mm").substract(1, "years");
 var currentTime = moment();
-var tFrequency: 10;
+var tFrequency:0;
 var diffTime = moment().diff(moment(firstTimeConverted, "minutes");
 var tRemainder = diffTime % tFrequency;
 var tMinutestilTrain = tFrequency - tRemainder;
@@ -28,6 +28,10 @@ var database = firebase.database();
 $('#submit').on("click", function (event) {
     event.preventDefault();
 
+    trainName = $('#name').val().trim();
+    destination = $('#destination').val().trim();
+    firstTime = moment($('#first-time-train').val().trim(), "MM/DD/YYYY").format('X');
+    tFrequency = $('#frequency').val().trim();
 
 });
 
