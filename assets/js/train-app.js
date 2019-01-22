@@ -23,10 +23,12 @@ var tRemainder = diffTime % tFrequency;
 var tMinutestilTrain = tFrequency - tRemainder;
 var nextArrival= moment().add(tMinutestilTrain, "minutes");
 
+var database = firebase.database();
 
-
-$('#submit').on("click", function () {
+$('#submit').on("click", function (event) {
     event.preventDefault();
+
+
 });
 
 
