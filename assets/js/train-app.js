@@ -37,7 +37,7 @@ $('#submit').on("click", function (event) {
     var trainData = {
         train: trainName,
         destination: destination,
-        firstTrainTime: firstTime,
+        firstTrainTime: timeFormat,
         frequency: frequency
     };
 
