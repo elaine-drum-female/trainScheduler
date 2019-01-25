@@ -2,3 +2,13 @@
     background:#976654;
     color:#fff;
 }
+
+.trainSchedule {
+    border:1px solid lightskyblue;
+    margin-bottom:10px;
+}
+
+.card-header {
+    background:lightskyblue;
+    color:#fff;
+}
