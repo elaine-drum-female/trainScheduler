@@ -36,7 +36,7 @@ $(document).ready(function () {
                 Frequency = $('#frequency').val().trim();
                 firstTime = moment($('#first-train-time').val().trim(), "MM/DD/YYYY").format('X');
                 nextArrival = moment().format('LT');
-                minutesAway = moment().endOf('hour').fromNow();
+                minutesAway = moment().startOf('minute').fromNow();
 
                 var newRow = '<div class="row"><div class="col-sm-2">' + trainName + '</div>' + '<div class="col-sm-2"> ' + destination + '</div>' + '<div class="col-sm-2">' + Frequency + '</div>' + '<div class="col-sm-2">' + nextArrival + '</div>' + '<div class="col-sm-2">' + minutesAway + '</div>';
 
@@ -69,11 +69,20 @@ $(document).ready(function () {
                 $('#frequency').val('');
                 $('#first-train-time').val('');
                 $('#minutesAway').val('');
-
-
             });
 
-            
+            // 3. Create Firebase event for adding employee to the database and a row in the html when a user adds an entry
+            database.ref().on('child_added', function (childSnapshot) {
+                console.log(childSnapshot.val());
+
+            //store everything into a variable
+            var trainName = childSnapshot.val().train;
+            var destination = childSnapshot.val().destination;
+            var Frequency = childSnapshot.val().frequency;
+            var firstTime = childSnapshot.val().firstTrainTime;
+            var nextArrival = childSnapshot.val().nextArrival;
+            var minutesAway = childSnapshot.val().minutesAway;
+            });
 
 
 
