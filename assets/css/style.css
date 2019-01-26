@@ -1,6 +1,12 @@
-.jumbotron {
+.jumbotron-fluid {
     background:#976654;
     color:#fff;
+}
+
+header {
+    padding:75px 0;
+    margin-bottom:25px;
+    text-align:center;
 }
 
 .trainSchedule {
@@ -11,4 +17,13 @@
 .card-header {
     background:lightskyblue;
     color:#fff;
+}
+
+.boldText {
+    font-weight:bold;
+}
+
+.col-sm-2 {
+    border-bottom: 1px solid slategray;
+    padding: 10px 5px;
 }
